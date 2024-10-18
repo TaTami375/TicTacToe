@@ -18,7 +18,6 @@ namespace TicTacToe
         {
             InitializeComponent();
         }
-
         private void pictureBox11_Click(object sender, EventArgs e)
         {
             using (MemoryStream ms = new MemoryStream(TicTacToe.Properties.Resources.Tic))
