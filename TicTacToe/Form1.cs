@@ -109,6 +109,7 @@ namespace TicTacToe
                     (pictureBox13.Image == Tic && pictureBox22.Image == Tic && pictureBox31.Image == Tic))
                 {
                     MessageBox.Show(this, "Победа крестиков");
+                    ClearField();
                 }
             }
             else
@@ -125,6 +126,19 @@ namespace TicTacToe
                     MessageBox.Show("Победа ноликов");
                 }
             }
+        }
+
+        private void ClearField()
+        {
+            pictureBox11.Image = null;
+            pictureBox12.Image = null;
+            pictureBox13.Image = null;
+            pictureBox21.Image = null;
+            pictureBox22.Image = null;
+            pictureBox23.Image = null;
+            pictureBox31.Image = null;
+            pictureBox32.Image = null;
+            pictureBox33.Image = null;
         }
     }
 }
