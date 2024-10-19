@@ -92,6 +92,39 @@ namespace TicTacToe
 
             cell.SizeMode = PictureBoxSizeMode.StretchImage;
             cell.Enabled = false;
+            ChekWin();
+        }
+
+        private void ChekWin()
+        {
+            if (!first)
+            {
+                if((pictureBox11.Image==Tic && pictureBox12.Image == Tic && pictureBox13.Image == Tic) ||
+                    (pictureBox21.Image == Tic && pictureBox22.Image == Tic && pictureBox23.Image == Tic)||
+                    (pictureBox31.Image == Tic && pictureBox32.Image == Tic && pictureBox33.Image == Tic)||
+                    (pictureBox11.Image == Tic && pictureBox21.Image == Tic && pictureBox31.Image == Tic)||
+                    (pictureBox12.Image == Tic && pictureBox22.Image == Tic && pictureBox32.Image == Tic)||
+                    (pictureBox13.Image == Tic && pictureBox23.Image == Tic && pictureBox33.Image == Tic)||
+                    (pictureBox11.Image == Tic && pictureBox22.Image == Tic && pictureBox33.Image == Tic)||
+                    (pictureBox13.Image == Tic && pictureBox22.Image == Tic && pictureBox31.Image == Tic))
+                {
+                    MessageBox.Show(this, "Победа крестиков");
+                }
+            }
+            else
+            {
+                if ((pictureBox11.Image == Tac && pictureBox12.Image == Tac && pictureBox13.Image == Tac) ||
+                    (pictureBox21.Image == Tac && pictureBox22.Image == Tac && pictureBox23.Image == Tac) ||
+                    (pictureBox31.Image == Tac && pictureBox32.Image == Tac && pictureBox33.Image == Tac) ||
+                    (pictureBox11.Image == Tac && pictureBox21.Image == Tac && pictureBox31.Image == Tac) ||
+                    (pictureBox12.Image == Tac && pictureBox22.Image == Tac && pictureBox32.Image == Tac) ||
+                    (pictureBox13.Image == Tac && pictureBox23.Image == Tac && pictureBox33.Image == Tac) ||
+                    (pictureBox11.Image == Tac && pictureBox22.Image == Tac && pictureBox33.Image == Tac) ||
+                    (pictureBox13.Image == Tac && pictureBox22.Image == Tac && pictureBox31.Image == Tac))
+                {
+                    MessageBox.Show("Победа ноликов");
+                }
+            }
         }
     }
 }
