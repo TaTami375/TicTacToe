@@ -93,6 +93,7 @@ namespace TicTacToe
             cell.SizeMode = PictureBoxSizeMode.StretchImage;
             cell.Enabled = false;
             ChekWin();
+            ChekDraw();
         }
 
         private void ChekWin()
@@ -124,6 +125,7 @@ namespace TicTacToe
                     (pictureBox13.Image == Tac && pictureBox22.Image == Tac && pictureBox31.Image == Tac))
                 {
                     MessageBox.Show("Победа ноликов");
+                    ClearField();
                 }
             }
         }
@@ -139,6 +141,27 @@ namespace TicTacToe
             pictureBox31.Image = null;
             pictureBox32.Image = null;
             pictureBox33.Image = null;
+            pictureBox11.Enabled = true;
+            pictureBox12.Enabled = true;
+            pictureBox13.Enabled = true;
+            pictureBox21.Enabled = true;
+            pictureBox22.Enabled = true;
+            pictureBox23.Enabled = true;
+            pictureBox31.Enabled = true;
+            pictureBox32.Enabled = true;
+            pictureBox33.Enabled = true;
+            first = true;
+        }
+
+        private void ChekDraw()
+        {
+            if ((!pictureBox11.Enabled && !pictureBox12.Enabled && !pictureBox13.Enabled &&
+                !pictureBox21.Enabled && !pictureBox22.Enabled && !pictureBox23.Enabled &&
+                !pictureBox31.Enabled && !pictureBox32.Enabled && !pictureBox33.Enabled))
+            {
+                MessageBox.Show(this, "Ниичья");
+                ClearField();
+            }
         }
     }
 }
